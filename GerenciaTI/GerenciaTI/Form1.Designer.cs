@@ -34,7 +34,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnLogar = new System.Windows.Forms.Button();
-            this.txtUsuario = new System.Windows.Forms.TextBox();
+            this.txtMatricula = new System.Windows.Forms.TextBox();
             this.txtSenha = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -57,9 +57,9 @@
             this.label2.Location = new System.Drawing.Point(339, 100);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 17);
+            this.label2.Size = new System.Drawing.Size(65, 17);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Usuário";
+            this.label2.Text = "Matrícula";
             // 
             // label3
             // 
@@ -86,7 +86,7 @@
             // 
             this.pictureBox1.Image = global::GerenciaTI.Properties.Resources.systempreferences_delsistema_12219;
             this.pictureBox1.Location = new System.Drawing.Point(65, 75);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(175, 149);
             this.pictureBox1.TabIndex = 4;
@@ -96,7 +96,7 @@
             // 
             this.btnLogar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogar.Location = new System.Drawing.Point(376, 231);
-            this.btnLogar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLogar.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogar.Name = "btnLogar";
             this.btnLogar.Size = new System.Drawing.Size(100, 37);
             this.btnLogar.TabIndex = 5;
@@ -104,18 +104,18 @@
             this.btnLogar.UseVisualStyleBackColor = true;
             this.btnLogar.Click += new System.EventHandler(this.btnLogar_Click);
             // 
-            // txtUsuario
+            // txtMatricula
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(343, 119);
-            this.txtUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(171, 22);
-            this.txtUsuario.TabIndex = 6;
+            this.txtMatricula.Location = new System.Drawing.Point(343, 119);
+            this.txtMatricula.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMatricula.Name = "txtMatricula";
+            this.txtMatricula.Size = new System.Drawing.Size(171, 22);
+            this.txtMatricula.TabIndex = 6;
             // 
             // txtSenha
             // 
             this.txtSenha.Location = new System.Drawing.Point(343, 183);
-            this.txtSenha.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSenha.Margin = new System.Windows.Forms.Padding(4);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(171, 22);
             this.txtSenha.TabIndex = 7;
@@ -126,15 +126,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(581, 363);
             this.Controls.Add(this.txtSenha);
-            this.Controls.Add(this.txtUsuario);
+            this.Controls.Add(this.txtMatricula);
             this.Controls.Add(this.btnLogar);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.Load += new System.EventHandler(this.Form1_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -151,7 +152,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnLogar;
-        private System.Windows.Forms.TextBox txtUsuario;
+        private System.Windows.Forms.TextBox txtMatricula;
         private System.Windows.Forms.TextBox txtSenha;
     }
 }

@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using FireSharp.Config;
 using FireSharp.Interfaces;
 using FireSharp.Response;
+using Newtonsoft.Json;
 
 namespace GerenciaTI
 {
@@ -31,22 +32,28 @@ namespace GerenciaTI
         private void Form1_Load_1(object sender, EventArgs e)
         {
             client = new FireSharp.FirebaseClient(config);
-            if (client != null)
-            {
-                MessageBox.Show("conexão feita");
-            }
+            if (client == null)
+            { MessageBox.Show("Erro ao estabelecer a conexão com o FireBase"); }
         }
 
-        private async void btnLogar_Click(object sender, EventArgs e)
+        private void btnLogar_Click(object sender, EventArgs e)
         {
-            //var data = new Data
-            //{
-            //    usuario = txtUsuario.Text,
-            //    senha = txtSenha.Text,
-            //};
-            //SetResponse response = await client.SetTaskAsync("usuario/"+txtUsuario.Text, data);
-            //Data result = response.ResultAs<Data>();
-            //MessageBox.Show("Data inserida" + result.usuario);
+            FirebaseResponse response = client.Get(@"usuario/" + txtMatricula.Text);
+            Teste usuario = JsonConvert.DeserializeObject<Teste>(response.Body);
+
+            var usuarioTela = new Teste
+            {
+                matricula = txtMatricula.Text,
+                senha = txtSenha.Text
+            };
+
+            if (Teste.isEqual(usuario, usuarioTela))
+            {
+                Menu menu = new Menu();
+                menu.ShowDialog();
+            }
+            else
+            { MessageBox.Show(Teste.erro); }
         }
     }
 }

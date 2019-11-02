@@ -22,6 +22,14 @@ namespace GerenciaTI
         public string usuario { get; set; }
         public string senha { get; set; }
         public string perfil { get; set; }
+        public static string erro;
 
+        public static bool isEqual(Usuario userUm, Usuario userDois)
+        {
+            if(userUm == null || userDois == null) { return false; }
+            if(userUm.matricula != userDois.matricula) { erro = "Usuário não existe"; return false; }
+            else if(userUm.senha != userDois.senha) { erro = "Senha incorreta"; return false; }
+            return true;
+        }
     }
 }

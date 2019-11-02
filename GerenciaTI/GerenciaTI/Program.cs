@@ -16,7 +16,7 @@ namespace GerenciaTI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new gerUsuarios());
+            Application.Run(new Form1());
         }
     }
 }
