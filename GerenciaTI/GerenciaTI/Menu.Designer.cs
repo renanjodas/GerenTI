@@ -66,6 +66,7 @@
             this.lblHardware.Size = new System.Drawing.Size(279, 24);
             this.lblHardware.TabIndex = 6;
             this.lblHardware.Text = "Gerenciamento de Hardware";
+            this.lblHardware.Click += new System.EventHandler(this.lblHardware_Click);
             // 
             // lblSoftware
             // 
@@ -77,6 +78,7 @@
             this.lblSoftware.Size = new System.Drawing.Size(269, 24);
             this.lblSoftware.TabIndex = 7;
             this.lblSoftware.Text = "Gerenciamento de Software";
+            this.lblSoftware.Click += new System.EventHandler(this.lblSoftware_Click);
             // 
             // lblUsuarios
             // 
@@ -88,6 +90,7 @@
             this.lblUsuarios.Size = new System.Drawing.Size(270, 24);
             this.lblUsuarios.TabIndex = 9;
             this.lblUsuarios.Text = "Gerenciamento de Usuários";
+            this.lblUsuarios.Click += new System.EventHandler(this.lblUsuarios_Click);
             // 
             // pictureBox5
             // 
@@ -108,6 +111,7 @@
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 4;
             this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
             // pictureBox3
             // 
@@ -118,6 +122,7 @@
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 3;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // pictureBox2
             // 
@@ -128,6 +133,7 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // pictureBox1
             // 
@@ -149,6 +155,7 @@
             this.lblSair.Size = new System.Drawing.Size(37, 17);
             this.lblSair.TabIndex = 11;
             this.lblSair.Text = "Sair";
+            this.lblSair.Click += new System.EventHandler(this.lblSair_Click);
             // 
             // Menu
             // 
