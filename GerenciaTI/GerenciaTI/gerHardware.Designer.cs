@@ -67,7 +67,7 @@
             this.rbPreventiva = new System.Windows.Forms.RadioButton();
             this.label9 = new System.Windows.Forms.Label();
             this.txtObservacao = new System.Windows.Forms.TextBox();
-            this.dgvManutencao = new System.Windows.Forms.DataGridView();
+            this.dgvHardware = new System.Windows.Forms.DataGridView();
             this.btnAdicionar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnAnterior = new System.Windows.Forms.Button();
@@ -75,7 +75,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvManutencao)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHardware)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox2
@@ -430,13 +430,19 @@
             this.txtObservacao.Size = new System.Drawing.Size(346, 20);
             this.txtObservacao.TabIndex = 37;
             // 
-            // dgvManutencao
+            // dgvHardware
             // 
-            this.dgvManutencao.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvManutencao.Location = new System.Drawing.Point(12, 313);
-            this.dgvManutencao.Name = "dgvManutencao";
-            this.dgvManutencao.Size = new System.Drawing.Size(776, 145);
-            this.dgvManutencao.TabIndex = 38;
+            this.dgvHardware.AllowUserToAddRows = false;
+            this.dgvHardware.AllowUserToDeleteRows = false;
+            this.dgvHardware.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvHardware.Location = new System.Drawing.Point(12, 313);
+            this.dgvHardware.MultiSelect = false;
+            this.dgvHardware.Name = "dgvHardware";
+            this.dgvHardware.ReadOnly = true;
+            this.dgvHardware.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvHardware.Size = new System.Drawing.Size(776, 145);
+            this.dgvHardware.TabIndex = 38;
+            this.dgvHardware.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHardware_CellClick);
             // 
             // btnAdicionar
             // 
@@ -446,6 +452,7 @@
             this.btnAdicionar.TabIndex = 39;
             this.btnAdicionar.Text = "Adicionar";
             this.btnAdicionar.UseVisualStyleBackColor = true;
+            this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
             // 
             // btnExcluir
             // 
@@ -483,7 +490,7 @@
             this.Controls.Add(this.btnAnterior);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnAdicionar);
-            this.Controls.Add(this.dgvManutencao);
+            this.Controls.Add(this.dgvHardware);
             this.Controls.Add(this.txtObservacao);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.groupBox1);
@@ -505,12 +512,13 @@
             this.Controls.Add(this.pictureBox2);
             this.Name = "gerHardware";
             this.Text = "Gerenciamento de Hardware";
+            this.Load += new System.EventHandler(this.gerHardware_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvManutencao)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHardware)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -557,7 +565,7 @@
         private System.Windows.Forms.RadioButton rbPreventiva;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtObservacao;
-        private System.Windows.Forms.DataGridView dgvManutencao;
+        private System.Windows.Forms.DataGridView dgvHardware;
         private System.Windows.Forms.Button btnAdicionar;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnAnterior;
