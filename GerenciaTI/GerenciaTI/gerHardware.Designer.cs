@@ -53,6 +53,9 @@
             this.txtDescServico = new System.Windows.Forms.TextBox();
             this.txtFrequencia = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dtpManuPreditiva = new System.Windows.Forms.DateTimePicker();
+            this.dtpManuProx = new System.Windows.Forms.DateTimePicker();
+            this.dtpMAnuAtual = new System.Windows.Forms.DateTimePicker();
             this.btnImprimir = new System.Windows.Forms.Button();
             this.btnManuExcluir = new System.Windows.Forms.Button();
             this.btnManuAlterar = new System.Windows.Forms.Button();
@@ -69,9 +72,6 @@
             this.btn = new System.Windows.Forms.Button();
             this.dgvManu = new System.Windows.Forms.DataGridView();
             this.dtpAquisicao = new System.Windows.Forms.DateTimePicker();
-            this.dtpMAnuAtual = new System.Windows.Forms.DateTimePicker();
-            this.dtpManuProx = new System.Windows.Forms.DateTimePicker();
-            this.dtpManuPreditiva = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -306,6 +306,30 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Manutenção";
             // 
+            // dtpManuPreditiva
+            // 
+            this.dtpManuPreditiva.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpManuPreditiva.Location = new System.Drawing.Point(296, 111);
+            this.dtpManuPreditiva.Name = "dtpManuPreditiva";
+            this.dtpManuPreditiva.Size = new System.Drawing.Size(88, 20);
+            this.dtpManuPreditiva.TabIndex = 52;
+            // 
+            // dtpManuProx
+            // 
+            this.dtpManuProx.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpManuProx.Location = new System.Drawing.Point(107, 111);
+            this.dtpManuProx.Name = "dtpManuProx";
+            this.dtpManuProx.Size = new System.Drawing.Size(99, 20);
+            this.dtpManuProx.TabIndex = 51;
+            // 
+            // dtpMAnuAtual
+            // 
+            this.dtpMAnuAtual.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpMAnuAtual.Location = new System.Drawing.Point(285, 85);
+            this.dtpMAnuAtual.Name = "dtpMAnuAtual";
+            this.dtpMAnuAtual.Size = new System.Drawing.Size(99, 20);
+            this.dtpMAnuAtual.TabIndex = 50;
+            // 
             // btnImprimir
             // 
             this.btnImprimir.Location = new System.Drawing.Point(296, 206);
@@ -341,6 +365,7 @@
             this.btnManuIncluir.TabIndex = 43;
             this.btnManuIncluir.Text = "Incluir";
             this.btnManuIncluir.UseVisualStyleBackColor = true;
+            this.btnManuIncluir.Click += new System.EventHandler(this.btnManuIncluir_Click);
             // 
             // groupBox2
             // 
@@ -460,30 +485,6 @@
             this.dtpAquisicao.Name = "dtpAquisicao";
             this.dtpAquisicao.Size = new System.Drawing.Size(99, 20);
             this.dtpAquisicao.TabIndex = 49;
-            // 
-            // dtpMAnuAtual
-            // 
-            this.dtpMAnuAtual.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpMAnuAtual.Location = new System.Drawing.Point(285, 85);
-            this.dtpMAnuAtual.Name = "dtpMAnuAtual";
-            this.dtpMAnuAtual.Size = new System.Drawing.Size(99, 20);
-            this.dtpMAnuAtual.TabIndex = 50;
-            // 
-            // dtpManuProx
-            // 
-            this.dtpManuProx.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpManuProx.Location = new System.Drawing.Point(107, 111);
-            this.dtpManuProx.Name = "dtpManuProx";
-            this.dtpManuProx.Size = new System.Drawing.Size(99, 20);
-            this.dtpManuProx.TabIndex = 51;
-            // 
-            // dtpManuPreditiva
-            // 
-            this.dtpManuPreditiva.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpManuPreditiva.Location = new System.Drawing.Point(296, 111);
-            this.dtpManuPreditiva.Name = "dtpManuPreditiva";
-            this.dtpManuPreditiva.Size = new System.Drawing.Size(88, 20);
-            this.dtpManuPreditiva.TabIndex = 52;
             // 
             // gerHardware
             // 

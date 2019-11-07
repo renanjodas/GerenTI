@@ -68,7 +68,42 @@ namespace GerenciaTI
         {
             txtCodigo.Text = dgvHardware.Rows[e.RowIndex].Cells[1].Value.ToString();
             txtEquipamento.Text = dgvHardware.Rows[e.RowIndex].Cells[2].Value.ToString();
-           
+            
+        }
+
+        private void btnManuIncluir_Click(object sender, EventArgs e)
+        {
+            int tipoManutencao;
+
+            if (rbPreventiva.Checked == true)
+            {
+                tipoManutencao = 1;
+            }else if(rbCorretiva.Checked == true)
+            {
+                tipoManutencao = 2;
+            }
+            else { tipoManutencao = 3; }
+
+            MySqlConnection conexao = new MySqlConnection(Banco.enderecoBanco());
+            MySqlCommand query = new MySqlCommand();
+            query.Connection = conexao;
+            conexao.Open();
+
+            query.CommandText = "INSERT INTO manutencao " +
+                "(servico, descricao, frequenciaDias, manuntencaoAtual, proximaManutencao, manuntencaoPreditiva, tipoManuntencao) " +
+                "values " +
+                "(@servico, @descricao, @frequenciaDias, @manutencaoAtual, @proximaManutencao, @manutencaoPreditiva, @tipoManutencao)";
+
+            query.Parameters.AddWithValue("@servico", txtServico.Text);
+            query.Parameters.AddWithValue("@descricao", txtDescServico.Text);
+            query.Parameters.AddWithValue("@frequenciaDias", txtFrequencia.Text);
+            query.Parameters.AddWithValue("@manutencaoAtual", Convert.ToDateTime(dtpMAnuAtual.Text).ToString("yyy-MM-dd"));
+            query.Parameters.AddWithValue("@proximaManutencao", Convert.ToDateTime(dtpManuProx.Text).ToString("yyy-MM-dd"));
+            query.Parameters.AddWithValue("@manutencaoPreditiva", Convert.ToDateTime(dtpManuPreditiva.Text).ToString("yyy-MM-dd"));
+            query.Parameters.AddWithValue("@tipoManutencao", tipoManutencao);
+            query.ExecuteNonQuery();
+
+            conexao.Close();
         }
     }
 }
