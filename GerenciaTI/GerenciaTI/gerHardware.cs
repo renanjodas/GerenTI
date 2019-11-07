@@ -37,7 +37,7 @@ namespace GerenciaTI
             query.Parameters.AddWithValue("@NumeroSerie", txtNumSerie.Text);
             query.Parameters.AddWithValue("@Modelo", txtModelo.Text);
             query.Parameters.AddWithValue("@Marca", txtMarca.Text);
-            query.Parameters.AddWithValue("@DataAquisicao", Convert.ToDateTime(txtDataAquisicao.Text).ToString("yyyy-MM-dd"));
+            query.Parameters.AddWithValue("@DataAquisicao", Convert.ToDateTime(dtpAquisicao.Text).ToString("yyyy-MM-dd"));
             query.Parameters.AddWithValue("@Observacao", txtObservacao.Text);
             query.ExecuteNonQuery();
 
@@ -50,7 +50,7 @@ namespace GerenciaTI
             mysqlCon.Open();
 
             MySqlDataAdapter MyDA = new MySqlDataAdapter();
-            string sqlSelectAll = "SELECT * from hardware";
+            string sqlSelectAll = "SELECT pkHardware, codigo, equipamento from hardware";
             MyDA.SelectCommand = new MySqlCommand(sqlSelectAll, mysqlCon);
 
             DataTable table = new DataTable();
@@ -61,20 +61,14 @@ namespace GerenciaTI
 
             dgvHardware.DataSource = bSource;
 
-            dgvHardware.Columns[0].Visible = false; 
-
+            dgvHardware.Columns[0].Visible = false;
         }
 
         private void dgvHardware_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             txtCodigo.Text = dgvHardware.Rows[e.RowIndex].Cells[1].Value.ToString();
             txtEquipamento.Text = dgvHardware.Rows[e.RowIndex].Cells[2].Value.ToString();
-            txtDescEquip.Text = dgvHardware.Rows[e.RowIndex].Cells[3].Value.ToString();
-            txtNumSerie.Text = dgvHardware.Rows[e.RowIndex].Cells[4].Value.ToString();
-            txtModelo.Text = dgvHardware.Rows[e.RowIndex].Cells[5].Value.ToString();
-            txtMarca.Text = dgvHardware.Rows[e.RowIndex].Cells[6].Value.ToString();
-            txtDataAquisicao.Text = dgvHardware.Rows[e.RowIndex].Cells[7].Value.ToString();
-            txtObservacao.Text = dgvHardware.Rows[e.RowIndex].Cells[8].Value.ToString();
+           
         }
     }
 }

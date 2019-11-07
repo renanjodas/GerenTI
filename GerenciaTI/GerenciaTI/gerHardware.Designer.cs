@@ -43,7 +43,6 @@
             this.txtNumSerie = new System.Windows.Forms.TextBox();
             this.txtModelo = new System.Windows.Forms.TextBox();
             this.txtMarca = new System.Windows.Forms.TextBox();
-            this.txtDataAquisicao = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -53,9 +52,6 @@
             this.txtServico = new System.Windows.Forms.TextBox();
             this.txtDescServico = new System.Windows.Forms.TextBox();
             this.txtFrequencia = new System.Windows.Forms.TextBox();
-            this.txtManuAtual = new System.Windows.Forms.TextBox();
-            this.txtProxManu = new System.Windows.Forms.TextBox();
-            this.txtPreditiva = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnImprimir = new System.Windows.Forms.Button();
             this.btnManuExcluir = new System.Windows.Forms.Button();
@@ -70,12 +66,17 @@
             this.dgvHardware = new System.Windows.Forms.DataGridView();
             this.btnAdicionar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
-            this.btnAnterior = new System.Windows.Forms.Button();
-            this.btnProximo = new System.Windows.Forms.Button();
+            this.btn = new System.Windows.Forms.Button();
+            this.dgvManu = new System.Windows.Forms.DataGridView();
+            this.dtpAquisicao = new System.Windows.Forms.DateTimePicker();
+            this.dtpMAnuAtual = new System.Windows.Forms.DateTimePicker();
+            this.dtpManuProx = new System.Windows.Forms.DateTimePicker();
+            this.dtpManuPreditiva = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHardware)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvManu)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox2
@@ -204,13 +205,6 @@
             this.txtMarca.Size = new System.Drawing.Size(115, 20);
             this.txtMarca.TabIndex = 20;
             // 
-            // txtDataAquisicao
-            // 
-            this.txtDataAquisicao.Location = new System.Drawing.Point(266, 186);
-            this.txtDataAquisicao.Name = "txtDataAquisicao";
-            this.txtDataAquisicao.Size = new System.Drawing.Size(100, 20);
-            this.txtDataAquisicao.TabIndex = 21;
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -286,40 +280,19 @@
             this.txtFrequencia.Size = new System.Drawing.Size(100, 20);
             this.txtFrequencia.TabIndex = 31;
             // 
-            // txtManuAtual
-            // 
-            this.txtManuAtual.Location = new System.Drawing.Point(285, 85);
-            this.txtManuAtual.Name = "txtManuAtual";
-            this.txtManuAtual.Size = new System.Drawing.Size(99, 20);
-            this.txtManuAtual.TabIndex = 32;
-            // 
-            // txtProxManu
-            // 
-            this.txtProxManu.Location = new System.Drawing.Point(115, 111);
-            this.txtProxManu.Name = "txtProxManu";
-            this.txtProxManu.Size = new System.Drawing.Size(92, 20);
-            this.txtProxManu.TabIndex = 33;
-            // 
-            // txtPreditiva
-            // 
-            this.txtPreditiva.Location = new System.Drawing.Point(296, 111);
-            this.txtPreditiva.Name = "txtPreditiva";
-            this.txtPreditiva.Size = new System.Drawing.Size(88, 20);
-            this.txtPreditiva.TabIndex = 34;
-            // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.dtpManuPreditiva);
+            this.groupBox1.Controls.Add(this.dtpManuProx);
+            this.groupBox1.Controls.Add(this.dtpMAnuAtual);
             this.groupBox1.Controls.Add(this.btnImprimir);
             this.groupBox1.Controls.Add(this.btnManuExcluir);
             this.groupBox1.Controls.Add(this.btnManuAlterar);
             this.groupBox1.Controls.Add(this.btnManuIncluir);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.label15);
-            this.groupBox1.Controls.Add(this.txtPreditiva);
             this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.txtProxManu);
             this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.txtManuAtual);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.txtFrequencia);
             this.groupBox1.Controls.Add(this.label13);
@@ -440,13 +413,13 @@
             this.dgvHardware.Name = "dgvHardware";
             this.dgvHardware.ReadOnly = true;
             this.dgvHardware.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvHardware.Size = new System.Drawing.Size(776, 145);
+            this.dgvHardware.Size = new System.Drawing.Size(354, 145);
             this.dgvHardware.TabIndex = 38;
             this.dgvHardware.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHardware_CellClick);
             // 
             // btnAdicionar
             // 
-            this.btnAdicionar.Location = new System.Drawing.Point(20, 272);
+            this.btnAdicionar.Location = new System.Drawing.Point(117, 272);
             this.btnAdicionar.Name = "btnAdicionar";
             this.btnAdicionar.Size = new System.Drawing.Size(75, 23);
             this.btnAdicionar.TabIndex = 39;
@@ -456,45 +429,76 @@
             // 
             // btnExcluir
             // 
-            this.btnExcluir.Location = new System.Drawing.Point(113, 272);
+            this.btnExcluir.Location = new System.Drawing.Point(281, 272);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(75, 23);
             this.btnExcluir.TabIndex = 40;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
             // 
-            // btnAnterior
+            // btn
             // 
-            this.btnAnterior.Location = new System.Drawing.Point(210, 272);
-            this.btnAnterior.Name = "btnAnterior";
-            this.btnAnterior.Size = new System.Drawing.Size(75, 23);
-            this.btnAnterior.TabIndex = 41;
-            this.btnAnterior.Text = "Anterior";
-            this.btnAnterior.UseVisualStyleBackColor = true;
+            this.btn.Location = new System.Drawing.Point(198, 272);
+            this.btn.Name = "btn";
+            this.btn.Size = new System.Drawing.Size(75, 23);
+            this.btn.TabIndex = 47;
+            this.btn.Text = "Alterar";
+            this.btn.UseVisualStyleBackColor = true;
             // 
-            // btnProximo
+            // dgvManu
             // 
-            this.btnProximo.Location = new System.Drawing.Point(291, 272);
-            this.btnProximo.Name = "btnProximo";
-            this.btnProximo.Size = new System.Drawing.Size(75, 23);
-            this.btnProximo.TabIndex = 42;
-            this.btnProximo.Text = "Próximo";
-            this.btnProximo.UseVisualStyleBackColor = true;
+            this.dgvManu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvManu.Location = new System.Drawing.Point(386, 313);
+            this.dgvManu.Name = "dgvManu";
+            this.dgvManu.Size = new System.Drawing.Size(402, 145);
+            this.dgvManu.TabIndex = 48;
+            // 
+            // dtpAquisicao
+            // 
+            this.dtpAquisicao.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpAquisicao.Location = new System.Drawing.Point(267, 185);
+            this.dtpAquisicao.Name = "dtpAquisicao";
+            this.dtpAquisicao.Size = new System.Drawing.Size(99, 20);
+            this.dtpAquisicao.TabIndex = 49;
+            // 
+            // dtpMAnuAtual
+            // 
+            this.dtpMAnuAtual.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpMAnuAtual.Location = new System.Drawing.Point(285, 85);
+            this.dtpMAnuAtual.Name = "dtpMAnuAtual";
+            this.dtpMAnuAtual.Size = new System.Drawing.Size(99, 20);
+            this.dtpMAnuAtual.TabIndex = 50;
+            // 
+            // dtpManuProx
+            // 
+            this.dtpManuProx.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpManuProx.Location = new System.Drawing.Point(107, 111);
+            this.dtpManuProx.Name = "dtpManuProx";
+            this.dtpManuProx.Size = new System.Drawing.Size(99, 20);
+            this.dtpManuProx.TabIndex = 51;
+            // 
+            // dtpManuPreditiva
+            // 
+            this.dtpManuPreditiva.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpManuPreditiva.Location = new System.Drawing.Point(296, 111);
+            this.dtpManuPreditiva.Name = "dtpManuPreditiva";
+            this.dtpManuPreditiva.Size = new System.Drawing.Size(88, 20);
+            this.dtpManuPreditiva.TabIndex = 52;
             // 
             // gerHardware
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 464);
-            this.Controls.Add(this.btnProximo);
-            this.Controls.Add(this.btnAnterior);
+            this.Controls.Add(this.dtpAquisicao);
+            this.Controls.Add(this.dgvManu);
+            this.Controls.Add(this.btn);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnAdicionar);
             this.Controls.Add(this.dgvHardware);
             this.Controls.Add(this.txtObservacao);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.txtDataAquisicao);
             this.Controls.Add(this.txtMarca);
             this.Controls.Add(this.txtModelo);
             this.Controls.Add(this.txtNumSerie);
@@ -519,6 +523,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHardware)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvManu)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -541,7 +546,6 @@
         private System.Windows.Forms.TextBox txtNumSerie;
         private System.Windows.Forms.TextBox txtModelo;
         private System.Windows.Forms.TextBox txtMarca;
-        private System.Windows.Forms.TextBox txtDataAquisicao;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
@@ -551,9 +555,6 @@
         private System.Windows.Forms.TextBox txtServico;
         private System.Windows.Forms.TextBox txtDescServico;
         private System.Windows.Forms.TextBox txtFrequencia;
-        private System.Windows.Forms.TextBox txtManuAtual;
-        private System.Windows.Forms.TextBox txtProxManu;
-        private System.Windows.Forms.TextBox txtPreditiva;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnImprimir;
         private System.Windows.Forms.Button btnManuExcluir;
@@ -568,7 +569,11 @@
         private System.Windows.Forms.DataGridView dgvHardware;
         private System.Windows.Forms.Button btnAdicionar;
         private System.Windows.Forms.Button btnExcluir;
-        private System.Windows.Forms.Button btnAnterior;
-        private System.Windows.Forms.Button btnProximo;
+        private System.Windows.Forms.Button btn;
+        private System.Windows.Forms.DataGridView dgvManu;
+        private System.Windows.Forms.DateTimePicker dtpManuPreditiva;
+        private System.Windows.Forms.DateTimePicker dtpManuProx;
+        private System.Windows.Forms.DateTimePicker dtpMAnuAtual;
+        private System.Windows.Forms.DateTimePicker dtpAquisicao;
     }
 }

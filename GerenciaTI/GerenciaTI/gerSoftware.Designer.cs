@@ -73,10 +73,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.dgvAtual = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSoftware)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAtual)).BeginInit();
             this.SuspendLayout();
             // 
             // btnProximo
@@ -120,7 +122,7 @@
             this.dgvSoftware.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSoftware.Location = new System.Drawing.Point(22, 315);
             this.dgvSoftware.Name = "dgvSoftware";
-            this.dgvSoftware.Size = new System.Drawing.Size(776, 145);
+            this.dgvSoftware.Size = new System.Drawing.Size(354, 145);
             this.dgvSoftware.TabIndex = 62;
             // 
             // txtObservacao
@@ -481,11 +483,20 @@
             this.pictureBox3.TabIndex = 67;
             this.pictureBox3.TabStop = false;
             // 
+            // dgvAtual
+            // 
+            this.dgvAtual.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAtual.Location = new System.Drawing.Point(396, 315);
+            this.dgvAtual.Name = "dgvAtual";
+            this.dgvAtual.Size = new System.Drawing.Size(402, 145);
+            this.dgvAtual.TabIndex = 68;
+            // 
             // gerSoftware
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(821, 474);
+            this.Controls.Add(this.dgvAtual);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.btnProximo);
             this.Controls.Add(this.btnAnterior);
@@ -518,6 +529,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAtual)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -570,5 +582,6 @@
         private System.Windows.Forms.TextBox txtRenovValor;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.DataGridView dgvAtual;
     }
 }
